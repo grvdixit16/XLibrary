@@ -1,0 +1,36 @@
+﻿
+CREATE TABLE [dbo].[Logs](
+	[Id] [Int] NOT NULL,
+	[Log] VARCHAR(Max) NOT NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[UpdatedDate] [datetime] NOT NULL,
+	[IsActive] [bit] NOT NULL,
+)
+CREATE TABLE [dbo].[Users](
+	[Id] [Int] NOT NULL,
+	[UserName] [varchar](150) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+	[UserCode] [varchar](50) NOT NULL,
+	[FirstName] [varchar](50) NULL,
+	[LastName] [varchar](50) NULL,
+	[Email] [varchar](150) NULL,
+	[Mobile] [varchar](11) NULL,
+	[Phone] [varchar](15) NULL,
+	[Gender] [varchar](10) NULL,
+	[PanCardNumber] [varchar](30) NULL,
+	[AadhaarNumber] [varchar](30) NULL,
+	[VoterCardNumber] [varchar](30) NULL,
+	[Address] varchar (250) null,
+	[State] [varchar](150) NULL,
+	[City] [varchar](100) NULL,
+	[District] [varchar](150) NULL,
+	[Pincode] [varchar](10) NULL,
+	[RoleId] [Int] NOT NULL,
+	[CreatedByUserId] [Int] NOT NULL,
+	[UpdatedByUserId] [Int] NOT NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[UpdatedDate] [datetime] NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	PRIMARY KEY (Id),
+	CONSTRAINT FK_RoleId_Users FOREIGN KEY (RoleId) REFERENCES dbo.Role(Id)
+) 

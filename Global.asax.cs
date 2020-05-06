@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -20,7 +21,7 @@ namespace XLibrary
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+            Database.SetInitializer<XDbContext>(null);
             // Auto Mapper Configurations 
             // ex. taken from https://stackoverflow.com/questions/42508231/automapper-5-2-how-to-configure/42508429
             AutoMapper.Mapper.Initialize(cfg => {

@@ -1,0 +1,28 @@
+{
+  "Username": "admin1",
+  "Password": "admin1",
+  "FirstName": "Rahul",
+  "MidName": "Kumar",
+  "LastName": "Singh",
+  "PrimaryMobile": "1234567898",
+  "SecondaryMobile": "0987654321",
+  "LoginAttempts": 2,
+  "Email": "rahul@sharma.com",
+  "CreatedDate": "2020-04-27",
+  "UpdatedDate": "2020-04-27",
+  "IsActive": "true"
+}
+
+//Role
+
+
+  {
+  "Role": "Admin",
+  "Description": "admin role",
+  "CreatedDate": "2020-04-27",
+  "UpdatedDate": "2020-04-27",
+  "IsActive": "true"
+}
+
+
+

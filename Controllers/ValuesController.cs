@@ -11,7 +11,6 @@ namespace XLibrary.Controllers
 {
     public class ValuesController : ApiController
     {
-        // GET api/values
         public IEnumerable<Modules> Get()
         {
             ModulesXCode xCode = new ModulesXCode();

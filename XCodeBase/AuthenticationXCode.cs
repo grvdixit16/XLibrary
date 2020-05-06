@@ -12,26 +12,20 @@ namespace XLibrary.XCodeBase
     public class AuthenticationXCode
     {
         XDbContext dbContext = null;
+        UserXCode userXCode = null;
         public AuthenticationXCode() { 
             
            dbContext = new XDbContext();
+            userXCode = new UserXCode();
         }
 
-        public AuthenticationModel Register(AuthenticationModel authenticationModel) {
+        public Users Register(Users authenticationModel) {
             if (authenticationModel != null) {
-                Users user = Mapper.Map<AuthenticationModel, Users>(authenticationModel);
-
-                // Encrypt Password Code here
-                user.Password = EncryptDecryptCode.Encrypt(user.Password);
-                dbContext.Userss.Add(user);
-                dbContext.SaveChanges();
-
-                // Add Log Code here
-
+                userXCode.AddUser(authenticationModel);
             }
             return authenticationModel;
         }
-        public AuthenticationModel Login(AuthenticationModel authenticationModel)
+        public Users Login(Users authenticationModel)
         {
             if (authenticationModel != null)
             {
@@ -44,7 +38,7 @@ namespace XLibrary.XCodeBase
             return authenticationModel;
         }
 
-        public AuthenticationModel GetUserDetailByUsernamePass(AuthenticationModel authenticationModel)
+        public Users GetUserDetailByUsernamePass(Users authenticationModel)
         {
            var password = EncryptDecryptCode.Encrypt(authenticationModel.Password);
             var user = dbContext.Userss.FirstOrDefault(x => x.Username == authenticationModel.Username && x.Password == password);

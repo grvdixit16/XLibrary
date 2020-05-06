@@ -17,5 +17,7 @@ namespace XLibrary.Models.DbModels
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Users> Userss { get; set; }
         public DbSet<UsersAddress> UsersAddresss { get; set; }
+        public DbSet<LogDetails> LogDetailss { get; set; }
+        public DbSet<TaxRates> LogDetailss { get; set; }
     }
 }
